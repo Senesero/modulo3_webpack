@@ -7,8 +7,11 @@ var basePath = __dirname;
 
 module.exports = {
     context: path.join(basePath, 'src'),
+    resolve: {
+        extensions: ['.js', '.ts']
+    },
     entry: {
-        app: './students.js',
+        app: './students.ts',
         appStyles: [
             './mystyles.scss',
         ],
@@ -35,7 +38,17 @@ module.exports = {
         }
     },
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    useBabel: true,
+                    "babelCore": "@babel/core", // needed for Babel 7
+                }
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
@@ -43,11 +56,11 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    {
-                        loader: 'css-loader'
-                    }
+                    loader: MiniCssExtractPlugin.loader,
+                },
+                {
+                    loader: 'css-loader'
+                }
                 ]
             },
             {
@@ -62,7 +75,11 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
                 loader: 'url-loader?limit=2000',
-            }
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
         ]
     },
     plugins: [

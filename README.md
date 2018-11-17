@@ -1,2 +1,1 @@
-# Máster Lemoncode
-# Módulo 3 - Webpack
+# Máster Lemoncode - Módulo 3 - Webpack

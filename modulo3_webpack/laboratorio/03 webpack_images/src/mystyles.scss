@@ -1,0 +1,12 @@
+$blue-color: green;
+$white-color: white;
+.style-sass {
+    background-color: $blue-color;
+    color: $white-color;
+    margin-top: 200px;
+}
+
+img {
+    display: block;
+    width: 200px;
+}

@@ -10,6 +10,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts']
     },
+    devtool: 'inline-source-map',
     entry: {
         app: './students.ts',
         appStyles: [

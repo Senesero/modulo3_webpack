@@ -1,3 +1,3 @@
-# Máster Lemoncode - Módulo 3 - Webpack
-Laboratorio Webpack Typescript
+# Máster Lemoncode - Módulo 3 - Parcel
+Laboratorio Parcel Typescript
  - Ejemplo SASS, TYPESCRIPT
